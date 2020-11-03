@@ -8,7 +8,7 @@ const HomePage = () => {
   
     const axiosBase = require('axios');
     const axios = axiosBase.create({
-      baseURL: 'http://localhost:3011', // バックエンドB のURL:port を指定する
+      baseURL: process.env.SERVER_HOST,
       headers: {
         'Content-Type': 'application/json',
         'X-Requested-With': 'XMLHttpRequest'
