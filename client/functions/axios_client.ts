@@ -1,12 +1,36 @@
+
 import axios from 'axios';
 
-const axiosClient = axios.create({
-  baseURL: process.env.SERVER_HOST,
-  headers: {
-    'Content-Type': 'application/json',
-    'X-Requested-With': 'XMLHttpRequest'
-  },
-  responseType: 'json'  
-});
+class axiosClient {
+  get(url: string) {
+    return (
+      axios({
+        method: 'get',
+        url: `${process.env.SERVER_HOST}${url}`,
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Requested-With': 'XMLHttpRequest'
+        },
+        responseType: 'json'  
+      })
+    )
+  }
 
-export default axiosClient;
+  post(url: string, data: { [key: string]: string }) {
+    return (
+      axios({
+        method: 'post',
+        url: `${process.env.SERVER_HOST}${url}`,
+        data: data,
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Requested-With': 'XMLHttpRequest'
+        },
+        responseType: 'json'  
+      })
+    )
+  }
+
+}
+
+export default new axiosClient;
