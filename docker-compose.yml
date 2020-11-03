@@ -6,7 +6,16 @@ services:
       dockerfile: ./server/Dockerfile
     tty: true
     ports:
-      - "3000:3000"
+      - "3010:3000"
     volumes:
       - ./server:/app
     command: npm run start:dev
+  client:
+    build:
+      context: .
+      dockerfile: ./client/Dockerfile
+    tty: true
+    ports:
+      - "3010:3000"
+    volumes:
+      - ./client:/app
