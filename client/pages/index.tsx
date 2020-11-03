@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react';
-import axios from '../functions/axios_client';
+import axiosClient from '../functions/axios_client';
 
 const HomePage = () => {
   const [test, setTest] = useState('test');
   useEffect(() => {
     setTest('initialize');
-
-    axios.get('/', {})
+    axiosClient.get('/cats')
     .then(function(response) {
       // 返ってきたレスポンスはそのまま加工せずに callback で呼び出し元へ渡す
       console.log(response)
@@ -14,7 +13,6 @@ const HomePage = () => {
     .catch(function(error) {
       console.log('ERROR!! occurred in Backend.')
     });
-
   });
 
   return (
