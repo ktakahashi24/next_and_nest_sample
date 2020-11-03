@@ -1,15 +1,15 @@
 version: "3.7"
 services:
-  # server:
-  #   build:
-  #     context: .
-  #     dockerfile: ./server/Dockerfile
-  #   tty: true
-  #   ports:
-  #     - "3010:3000"
-  #   volumes:
-  #     - ./server:/app
-  #   command: npm run start:dev
+  server:
+    build:
+      context: .
+      dockerfile: ./server/Dockerfile
+    tty: true
+    ports:
+      - "3011:3000"
+    volumes:
+      - ./server:/app
+    command: npm run start:dev
   client:
     build:
       context: .
