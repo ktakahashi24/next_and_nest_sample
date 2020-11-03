@@ -4,14 +4,14 @@ import axiosClient from '../functions/axios_client';
 const HomePage = () => {
   const [test, setTest] = useState('test');
   useEffect(() => {
-    setTest('initialize');
     axiosClient.get('/cats')
     .then(function(response) {
       // 返ってきたレスポンスはそのまま加工せずに callback で呼び出し元へ渡す
-      console.log(response)
+      setTest(response.data.message);
     })
     .catch(function(error) {
-      console.log('ERROR!! occurred in Backend.')
+      console.log(error);
+      console.log('ERROR!! occurred in Backend.');
     });
   });
 
