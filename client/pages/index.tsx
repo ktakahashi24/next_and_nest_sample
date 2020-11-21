@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import axiosClient from '../functions/axios_client';
 
 import Map from '../componets/map';
+import SideMenu from '../componets/side_menu';
+
 const HomePage = () => {
   const [test, setTest] = useState('test');
   useEffect(() => {
@@ -20,8 +22,9 @@ const HomePage = () => {
     <>
       <div>Welcome to Next.js Typesctipt!!!!{test}</div>
       <Map />
+      <SideMenu />
     </>
-  )
-}
+  );
+};
 
-export default HomePage
+export default HomePage;
