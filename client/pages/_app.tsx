@@ -1,5 +1,6 @@
-import { AppProps } from 'next/app'
-import Head from 'next/head'
+import { AppProps } from 'next/app';
+import Head from 'next/head';
+
 import Header from '../layouts/header';
 
 const App = ({ Component, pageProps }: AppProps) => (
@@ -13,10 +14,10 @@ const App = ({ Component, pageProps }: AppProps) => (
       {/* <link rel="manifest" href="/manifest.json" /> */}
     </Head>
     <Header />
-    <body>
+    <div css='width: 90%; margin: 0 auto;'>
       <Component {...pageProps} />
-    </body>
+    </div>
   </>
-)
+);
 
 export default App
