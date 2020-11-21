@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import axiosClient from '../functions/axios_client';
 
+import Map from '../componets/map';
 const HomePage = () => {
   const [test, setTest] = useState('test');
   useEffect(() => {
@@ -16,7 +17,10 @@ const HomePage = () => {
   });
 
   return (
-  <div>Welcome to Next.js Typesctipt!!!!{test}</div>
+    <>
+      <div>Welcome to Next.js Typesctipt!!!!{test}</div>
+      <Map />
+    </>
   )
 }
 
